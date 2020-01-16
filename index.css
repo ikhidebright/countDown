@@ -1,0 +1,66 @@
+.main {
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 20%;
+}
+.s {
+        display: inline;
+        font-size: 3vmin;
+        position: relative;
+        right: 3vmin;
+        margin-left: -2vmin;
+}
+
+input[type=tel] {
+        font-size: 5vmin;
+        width: 20%;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        border-bottom: 1vmin solid green;
+        padding: 1vmin;
+}
+
+
+input[type=tel]:focus {
+        border: none;
+        outline: none;
+        border-bottom: 1vmin solid green;
+}
+
+
+input[type=submit] {
+        background-color: green;
+        margin-top: 1vmin;
+        color: white;
+        border: none;
+        width: 32%;
+        font-weight: bold;
+        border-radius: 0.5vmin;
+        border-bottom: 1vmin solid green;
+        padding: 2vmin;
+}
+
+input[type=reset] {
+        
+        margin-top: 1vmin;
+        background-color: rgb(93, 97, 93);
+        color: white;
+        border: none;
+        width: 32%;
+        font-weight: bold;
+        margin-left: 2%;
+        border-radius: 0.5vmin;
+        border-bottom: 1vmin solid rgb(0, 0, 0);
+        padding: 2vmin;
+}
+
+input[type=reset]:focus {
+        outline: none;
+}
+
+input[type=submit]:focus {
+        outline: none;
+}
+
+
