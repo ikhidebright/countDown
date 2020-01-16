@@ -30,11 +30,9 @@ const secCount = (set2) => {
       let looper =  setInterval(() => {
                 if (set2 == 0) {
                         set2 = 60;
+                } else if(hour.value == 0 && minutes.value == 0 && seconds.value == 1){
+                        clearInterval(looper)
                 }
-
-                // if(hour.value == 0 && minutes.value == 0 && seconds.value == 1){
-                //         clearInterval(looper)
-                // }
 
                 let num = (--set2)
                 seconds.value = num
