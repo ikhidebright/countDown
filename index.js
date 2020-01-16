@@ -2,6 +2,13 @@ let hour = document.querySelector("#hr");
 let minutes = document.querySelector("#min");
 let seconds = document.querySelector("#sec");
 let start = document.querySelector("#start");
+let error = false;
+
+const checkValues = () => {
+        if (hour.value > 12 || minutes.value > 59 || seconds.value > 59) {
+error = true;
+        }
+}
 
 const hourCount = (set) => {
         set = hour.value;
@@ -41,10 +48,15 @@ const secCount = (set2) => {
 
 
 const updateUI = (e) => {
+        checkValues()
+        if(error){
+                alert("time numbers not real")
+        } else {
         hourCount()
         minCount()
         secCount();
         e.preventDefault();
+        }
 }
 
 start.addEventListener("click", updateUI)
