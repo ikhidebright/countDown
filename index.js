@@ -2,7 +2,14 @@ let hour = document.querySelector("#hr");
 let minutes = document.querySelector("#min");
 let seconds = document.querySelector("#sec");
 let start = document.querySelector("#start");
+let res = document.querySelector("#reset");
 let error = false;
+let reset = false;
+
+res.onclick = () => {
+        reset = true;   
+        document.location.reload(true);
+}
 
 const checkValues = () => {
         if (hour.value > 12 || minutes.value > 59 || seconds.value > 59) {
@@ -35,7 +42,15 @@ const minCount = (set3) => {
 const secCount = (set2) => {
         set2 = seconds.value;
       let looper =  setInterval(() => {
-                if (set2 == 0) {
+                if(reset === true) {
+                        clearInterval(looper);
+                        seconds.value = '';
+                        hour.value = ''
+                        minutes.value = ''
+                 }
+                
+                 
+                 if (set2 == 0) {
                         set2 = 60;
                 } else if(hour.value == 0 && minutes.value == 0 && seconds.value == 1){
                         clearInterval(looper)
@@ -48,6 +63,7 @@ const secCount = (set2) => {
 
 
 const updateUI = (e) => {
+        reset = false;
         checkValues()
         if(error){
                 alert("time numbers not real")
